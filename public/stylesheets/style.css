@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.bookCovers {
+  height: 350px;
+  width: 250px;
+}

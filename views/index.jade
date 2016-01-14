@@ -2,5 +2,4 @@ extends layout
 
 block content
   for book in books
-    p= book.title
-    p= book.author
+    img.bookCovers(src=''+book.book_image+'')

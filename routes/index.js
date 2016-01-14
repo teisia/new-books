@@ -13,7 +13,6 @@ router.get('/books', function(req, res, next) {
   .end(function(response) {
     var NYTBooks = response.body.results.books;
     res.render('index', {books: NYTBooks});
-    console.log(NYTBooks);
       res.end('Done');
   })
 });
