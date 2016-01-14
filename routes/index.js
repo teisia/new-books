@@ -2,28 +2,32 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req,res,next) {
+  res.redirect('/books');
+})
+
+router.get('/books', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/new', function(req, res, next) {
+router.get('/books/new', function(req, res, next) {
   res.render('new');
 })
 
-router.post('/new', function(req, res, next) {
-  res.redirect('/');
+router.post('/books/new', function(req, res, next) {
+  res.redirect('/books');
 })
 
-router.get('/:id/edit', function(req, res, next) {
+router.get('/books/:id/edit', function(req, res, next) {
   res.render('edit');
 })
 
-router.post('/:id/edit', function(req, res, next) {
-  res.redirect('/');
+router.post('/books/:id/edit', function(req, res, next) {
+  res.redirect('/books');
 })
 
-router.get('/:id/delete', function(req, res, next) {
-  res.redirect('/');
+router.get('/books/:id/delete', function(req, res, next) {
+  res.redirect('/books');
 })
 
 module.exports = router;

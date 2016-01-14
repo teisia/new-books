@@ -10,6 +10,15 @@ var users = require('./routes/users');
 
 var app = express();
 
+var unirest = require('unirest');
+
+app.get('/books', function(req, res) {
+    unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + NYT_API_KEY)
+      .end(function (response) {
+        console.log(response.body);
+      })
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
