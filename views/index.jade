@@ -1,4 +1,6 @@
 extends layout
 
 block content
-  h1 Books
+  for book in books
+    p= book.title
+    p= book.author
